@@ -8,7 +8,7 @@
     xmlns:pages="clr-namespace:Percentage_calculator.Views.Pages"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     Title="{Binding ViewModel.ApplicationTitle, Mode=OneWay}"
-    Width="1100"
+    Width="900"
     Height="650"
     d:DataContext="{d:DesignInstance local:MainWindow,
                                      IsDesignTimeCreatable=True}"
@@ -18,7 +18,10 @@
     WindowBackdropType="Mica"
     WindowCornerPreference="Round"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    
+    MinWidth="700"
+    >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -54,13 +57,8 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Frame x:Name="RootFrame" Grid.Row="1" />
-                    <ui:Breadcrumb
-                        Grid.Row="0"
-                        Margin="56,36"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                        FontSize="28"
-                        Navigation="{Binding ElementName=RootNavigation, Mode=OneWay}" />
+   
+   
                 </Grid>
             </Border>
         </Grid>

@@ -13,13 +13,138 @@
     Foreground="{DynamicResource TextFillColorPrimaryBrush}"
     mc:Ignorable="d">
 
-    <Grid Margin="56,0" VerticalAlignment="Top">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
 
-        <ui:Button Grid.Column="0" Command="{Binding ViewModel.CounterIncrementCommand, Mode=OneWay}" Content="Click me!" Icon="Fluent24" />
-        <TextBlock Grid.Column="1" Margin="12,0,0,0" VerticalAlignment="Center" Text="{Binding ViewModel.Counter, Mode=OneWay}" />
+
+        <!--#region header -->
+        <Grid 
+            Grid.Row="0" 
+            >
+
+            <StackPanel Margin="20" Orientation="Horizontal">
+                <Image Width="40" Source="/Assets/headerIcon.png"/>
+                <TextBlock Margin="5" FontSize="22" VerticalAlignment="Center" Text="Pencentage calculator"/>
+            </StackPanel>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region body -->
+        <Border CornerRadius="10" Grid.Row="1"  Margin="20" BorderThickness="3" Padding="0 40 0 0" >
+            <Border.BorderBrush>
+                <SolidColorBrush Color="Black" Opacity="0.1"/>
+
+            </Border.BorderBrush>
+            <Border.Background>
+                <RadialGradientBrush 
+                    Opacity="0.6"
+                          Center="0.5,1"
+                          GradientOrigin="0.5,1"
+                          RadiusX="0.5"
+                          RadiusY="0.5">
+                    <GradientStop Color="#0d1d31" Offset="1"  />
+            
+                    <GradientStop Color="#0c0d13" Offset="100" />
+                </RadialGradientBrush>
+            </Border.Background>
+  
+
+
+            <Border.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="5" Opacity="0.5" />
+            </Border.Effect>
+
+    
+
+            <StackPanel >
+                <!--#region get percentage of a number -->
+
+                <Border   CornerRadius="10"  Margin="20" Padding="20" MaxWidth="700">
+                    <Border.Background >
+                        <SolidColorBrush Color="Black" Opacity="0.2"/>
+                    </Border.Background>
+                    <StackPanel Panel.ZIndex="2"  HorizontalAlignment="Left"  Orientation="Horizontal">
+                    <TextBlock Margin="5" VerticalAlignment="Center" Text="What's the" FontSize="18"/>
+                    <ui:TextBox Width="150" PlaceholderText="Percentage"/>
+                    <TextBlock Margin="5" VerticalAlignment="Center" Text="% of" FontSize="18"/>
+                    <ui:TextBox Width="150" PlaceholderText="Value"/>
+                    <TextBlock Margin="5" VerticalAlignment="Center" Text="?" FontSize="18"/>
+                    <TextBlock Margin="5" VerticalAlignment="Center"  FontSize="18">
+                        <Image Width="30" Source="/Assets/resultIcon.png"/>
+                    </TextBlock>
+                </StackPanel>
+                </Border>
+                <!--#endregion-->
+        
+
+
+
+                <!--#region get percentage of a number -->
+
+                <Border   CornerRadius="10"  Margin="20" Padding="20" MaxWidth="700">
+                    <Border.Background >
+                        <SolidColorBrush Color="Black" Opacity="0.2"/>
+                    </Border.Background>
+
+                    <StackPanel  HorizontalAlignment="Left"  Orientation="Horizontal">
+                    <ui:TextBox Width="150" PlaceholderText="Number"/>
+                    <TextBlock Margin="5" VerticalAlignment="Center" Text="is what percent of" FontSize="18"/>
+
+
+                    <ui:TextBox Width="150" PlaceholderText="Number"/>
+                    <TextBlock Margin="5" VerticalAlignment="Center" Text="?" FontSize="18"/>
+                    <TextBlock Margin="5" VerticalAlignment="Center"  FontSize="18">
+                        <Image Width="30" Source="/Assets/resultIcon.png"/>
+                    </TextBlock>
+                </StackPanel>
+                </Border>
+                <!--#endregion-->
+
+
+                <!--#region get percentage increase/decrease-->
+
+                <Border   CornerRadius="10"  Margin="20" Padding="20" MaxWidth="700">
+                    <Border.Background >
+                        <SolidColorBrush Color="Black" Opacity="0.2"/>
+                    </Border.Background>
+
+                    <StackPanel HorizontalAlignment="Left"   Orientation="Horizontal">
+                    <TextBlock Margin="5" VerticalAlignment="Center" Text="From" FontSize="18"/>
+                    <ui:TextBox Width="150" PlaceholderText="Number"/>
+                    <TextBlock Margin="5" VerticalAlignment="Center" Text="to" FontSize="18"/>
+                    <ui:TextBox Width="150" PlaceholderText="Value"/>
+                    <TextBlock Margin="5" VerticalAlignment="Center" Text="?" FontSize="18"/>
+                    <TextBlock Margin="5" VerticalAlignment="Center"  FontSize="18">
+                        <Image Width="30" Source="/Assets/resultIcon.png"/>
+                    </TextBlock>
+                </StackPanel>
+                </Border>
+                <!--#endregion-->
+
+
+
+
+
+
+
+
+            </StackPanel>
+        </Border>
+        <!--#endregion-->
+
+        <!--#region footer -->
+        <Grid 
+            Grid.Row="2" 
+           >
+            
+        </Grid>
+        <!--#endregion-->
+
+
     </Grid>
+      
 </ui:UiPage>
