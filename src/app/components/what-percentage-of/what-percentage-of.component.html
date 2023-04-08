@@ -1,0 +1,18 @@
+<div class="container">
+  <p>What is </p>
+  <app-input-template   (inputChanged)="calculatePercentage()" placeHolder="First number" (setNumber)="setFirstNumber($event)" />  <p>% of </p>
+  <app-input-template   (inputChanged)="calculatePercentage()" (setNumber)="setSecondNumber($event)" placeHolder="Second number"/>
+
+  <p> = {{result}}  </p>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+  }
+</style>
