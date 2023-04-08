@@ -6,13 +6,17 @@ import { InputTemplateComponent } from './components/input-template/input-templa
 import { ContainerComponent } from './components/container/container.component';
 import { WhatPercentageOfComponent } from './components/what-percentage-of/what-percentage-of.component';
 import { FormsModule } from '@angular/forms';
+import { WhatPercentIsOfComponent } from './components/what-percent-is-of/what-percent-is-of.component';
+import { FromToComponent } from './components/from-to/from-to.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InputTemplateComponent,
     ContainerComponent,
-    WhatPercentageOfComponent
+    WhatPercentageOfComponent,
+    WhatPercentIsOfComponent,
+    FromToComponent
   ],
   imports: [
     BrowserModule,FormsModule

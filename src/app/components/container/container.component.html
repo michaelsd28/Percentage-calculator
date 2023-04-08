@@ -1,10 +1,21 @@
 
 <div class="container">
   <h1>Percentage calculator</h1>
+  <div class="sub-container">
   <ng-content></ng-content>
+</div>
 </div>
 
 <style>
+
+  .sub-container{
+    display: flex;
+    flex-direction: column;
+    align-items: last baseline;
+    justify-content: baseline;
+    padding: 20px;
+    border-radius: 10px;
+  }
 
 .container {
 
@@ -13,6 +24,7 @@
   align-items: center;
   justify-content: center;
 width: 50vw;
+min-width: 700px;
 margin-top: 40px;
 background-color: #171717;
 padding: 20px;
@@ -20,4 +32,18 @@ border-radius: 10px;
 
 
 }
+
+/* dont break h1  */
+.container h1 {
+  width: 100%;
+  text-align: center;
+}
+h1 {
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
 </style>

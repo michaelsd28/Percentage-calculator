@@ -1,0 +1,18 @@
+<div class="container">
+  <p>From </p>
+  <app-input-template   (inputChanged)="calculatePercentage()" placeHolder="First number" (setNumber)="setFirstNumber($event)" />  <p> to </p>
+  <app-input-template   (inputChanged)="calculatePercentage()" (setNumber)="setSecondNumber($event)" placeHolder="Second number"/>
+
+  <p class="result2"> = {{result}}  </p>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+  }
+</style>
